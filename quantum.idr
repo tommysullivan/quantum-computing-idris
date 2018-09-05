@@ -1,4 +1,4 @@
--- data Qubit
+4-- data Qubit
 
 -- Qubit is a physical system containing only boolean observables - observables which
 -- have only two discrete real elements in their spectrum. A rule about a system is that
