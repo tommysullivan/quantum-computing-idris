@@ -59,6 +59,7 @@ minus (Successor x) (Successor y) = case x `lessThan` y of
                 True => Nothing
                 False => minus x y
 
+
 data TEither a b = TLeft a | TRight b
 
 definitelyNatural : TEither Integer Natural -> Natural
@@ -66,8 +67,7 @@ definitelyNatural (TRight n) = n
 definitelyNatural (TLeft n) = naturalFromInteger n
 
 
-data TList a = EmptyList | NonEmptyList a (TList a)
-
+data TList itemType = EmptyList | NonEmptyList itemType (TList itemType)
 
 head : TList a -> a
 head (NonEmptyList a _) = a
@@ -78,8 +78,6 @@ ttail (NonEmptyList _ t) = t
 randomTlist : TList Integer
 randomTlist = NonEmptyList 2 (NonEmptyList 1 EmptyList)
 
--- mmap : TList a -> (f: a -> b) -> TList b
-
 tmap : TList a -> (a -> b) -> TList b
 tmap EmptyList _ = EmptyList
 tmap (NonEmptyList a tail) f = NonEmptyList (f a) (tmap tail f)
@@ -88,3 +86,9 @@ tlength : TList _ -> Nat
 tlength EmptyList = Z
 tlength (NonEmptyList _ tail) = S(tlength tail)
 
+
+-- data Vector' (dimension : Nat) scalarType = NullVector | NonEmptyVector' scalar (Vector' (dimension - 1) scalarType)
+
+data Vector' : (dimension : Nat) -> (scalarType : Type) -> Type where
+    NullVector : Vector' dimension scalarType
+    NonEmptyVector : (scalar : scalarType) -> (Vector' (dimension-1) scalarType) -> Vector' dimension scalarType
