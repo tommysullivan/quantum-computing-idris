@@ -13,7 +13,9 @@ cli() { local command=${1-""}; local remainingArgs="${@:2}"
 
 start() {
     echo "Download idris for MacOSX via https://github.com/idris-lang/Idris-dev/wiki/Idris-on-Mac-OS-X"
-    idris src/qc.idr -o dist/qc
+    cd src
+    idris qc.idr -o ../dist/qc
+    cd ..
     dist/qc
 }
 
