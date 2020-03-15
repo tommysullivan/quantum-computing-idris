@@ -14,3 +14,4 @@ https://idris2.readthedocs.io/en/latest/tutorial/starting.html
 # Outstanding Questions
 
 1. Can i run with tests and a watcher?
+2. Is there a nice test framework we can use?
