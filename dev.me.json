@@ -1,6 +1,0 @@
-{
-    "contentType": "application/json;tson=\"http://urlOfSomeTypeDefinitionThatThisSystemKnowsHowToRESTfullyQuery.com\"",
-    "someWayToInlineDefineTheTypeSoThatOneNeedNotNecessarilyAlwaysReferToAnotherURLToSpecifyTheTypeOfTHISResource": "inTheFutureWeCanDoThis",
-    "mayNeedToHaveSolutionForCasesWhenTheContentTypeFIeldItselfIsPartOfTheBodyOfTheResourceBeingRepresentedBeforeThisTypeSystemCameAlong"="myes",
-    
-}
